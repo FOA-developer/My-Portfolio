@@ -10,7 +10,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 
-
 const Project = () => {
 
   const textRef = useRef(null)
@@ -24,20 +23,23 @@ const Project = () => {
   )
 
   // project cards zoom in on scroll
+  const delays = [0, 0.2, 0.4, 0.6]
   const cards = projectsRef.current.querySelectorAll('.project-card')
-  gsap.fromTo(cards,
-    { opacity: 0, scale: 0.9 },
-    {
-      opacity: 1, scale: 1,
-      duration: 1,
-      stagger: 0.15,
-      ease: 'back.out(1.7)',
-      scrollTrigger: {
-        trigger: projectsRef.current,
-        start: 'top 80%',
+  cards.forEach((card, i) => {
+    gsap.fromTo(card,
+      { opacity: 0, scale: 0.9 },
+      {
+        opacity: 1, scale: 1,
+        duration: 1,
+        delay: delays[i],
+        ease: 'back.out(1.7)',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 85%',
+        }
       }
-    }
-  )
+    )
+  })
   }, [])
 
   const[projects, setProjects] = useState([
