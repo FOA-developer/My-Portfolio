@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Hero from './Hero.jsx';
 import Services from "./Services.jsx";
 import Projects from "./Projects.jsx";
@@ -12,6 +11,7 @@ const App = () => {
       <Hero />
       <Services />
       <Projects />
+      <Footer />
     </>
   );
 }
