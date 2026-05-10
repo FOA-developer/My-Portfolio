@@ -67,7 +67,7 @@ const Project = () => {
             </div>
             <h2 className="pb-4 text-white text-3xl md:text-4xl font-bold pt-5">Digital Works</h2>
           </div>
-          <div ref={projectsRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+          <div ref={projectsRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-8">
             {projects.map((project, index) => (
               <div key={index} className={`group project-card bg-[#1a1a1a] flex flex-col md:flex-row  p-6 rounded-2xl shadow-lg border-[1px] border-white/10 hover:border-[#FE4E02]  hover:shadow-xl transition duration-500 `}>
                 <div className="w-35 h-35 overflow-hidden rounded-md flex-shrink-0 mt-5 mr-6">
