@@ -1,10 +1,13 @@
 import Navbar from "./Navbar";
 import { ArrowRight} from 'lucide-react';
+import img from "./assets/image.png";
+import SplitText from "./SplitText";
 
 const Hero = () => {
+
   return ( 
-    <section>
-      <div className="relative w-full h-screen" style={{ backgroundColor: '#0a0a0a' }}>
+    <section id="about">
+      <div className="relative w-full pb-15" style={{ backgroundColor: '#0a0a0a' }}>
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{
           maskImage: `radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%)`,
           WebkitMaskImage: `radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%)`,
@@ -15,11 +18,47 @@ const Hero = () => {
         </div>
         <Navbar/>
         <div className="relative">
-          <div className="flex flex-col text-center items-center justify-center pt-16">
-            <div>
-              <h1 className="text-white md:text-7xl text-5xl lg:text-8xl font-semibold">Build Faster <br></br><span className="text-secondary pt-2">Design Smarter</span></h1>
-              <p className="pt-6 text-center m-auto text-secondary text-lg w-[60%]">Focused on creating high-performance, accessible, and beautiful digital experiences. Specialized in Javascript, React.js, and Modern UI systems.</p>
-              <button className="mt-6 bg-[#FE4E02] text-white py-2 px-4 rounded-2xl transition duration-300">View my Work<ArrowRight/></button>
+          <div className="flex items-center justify-center px-10 pr-15">
+            <div className="flex gap-7 justify-between flex-col-reverse md:flex-row">
+              <div className="pt-6 pl-6 md:pl-1 ">
+                <div className="flex items-center gap-1 justify-start">
+                  <div className="w-10 h-[2px] bg-[#FE4E02]"></div>
+                  <p className="text-[#FE4E02] font-mono text-semibold text-sm pb-1">AVAILABLE FOR PROJECTS</p>
+                </div>
+                <div className="flex flex-col">
+                  <SplitText
+                    text="Building Digital"
+                    className="text-white md:text-7xl text-4xl font-semibold"
+                    delay={50}
+                    duration={2}
+                    ease="power3.out"
+                    splitType="chars"
+                    from={{ opacity: 0, y: 40 }}
+                    to={{ opacity: 1, y: 0 }}
+                    threshold={0.1}
+                    rootMargin="-100px"
+                    textAlign="left"
+                  />
+                  <SplitText
+                    text="Solutions."
+                    className="text-secondary md:text-7xl text-4xl font-semibold pt-3"
+                    delay={200}
+                    duration={2}
+                    ease="power3.out"
+                    splitType="chars"
+                    from={{ opacity: 0, y: 40 }}
+                    to={{ opacity: 1, y: 0 }}
+                    threshold={0.1}
+                    rootMargin="-100px"
+                    textAlign="left"
+                  />
+                </div>
+                <p className="pt-3 text-secondary font-mono w-[90%]">I'm Flourish Agbanoma, a frontend developer building responsive and interactive web applications with React, Next.js and Tailwind CSS. I work with reusable components, API integration, state management, and modern frontend workflows.<br></br><br></br>I turn complex ideas into clean, functional interfaces and improving both performance and user experience. Most of my growth has come from hands-on development, fixing real codebases, collaborating with other developers, and pushing myself through projects and hackathons.</p>
+                <button className="mt-8 md:mt-5 bg-[#FE4E02] text-white  px-6 py-3 flex items-center justify-center gap-2 font-semibold rounded-3xl transition duration-300">View my Work<ArrowRight/></button>
+              </div>
+              <div className="rounded-full overflow-hidden w-[300px] h-[300px] md:w-[400px] md:h-[400px] flex-shrink-0 mt-18 ml-6 ">
+                <img src={img} alt="Flourish Agbanoma" className="w-full h-full object-cover object-top"/>
+              </div>
             </div>
           </div>
         </div>
