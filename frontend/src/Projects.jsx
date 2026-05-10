@@ -3,10 +3,42 @@ import pm from "./assets/pm.png";
 import sh from "./assets/sh.png";
 import no from "./assets/no.png";
 import ra from "./assets/ra.png";
+import { useRef, useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 
 
 const Project = () => {
+
+  const textRef = useRef(null)
+  const projectsRef = useRef(null)
+
+  useEffect(() => {
+  // text fade up
+  gsap.fromTo(textRef.current,
+    { opacity: 0, y: 60 },
+    { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
+  )
+
+  // project cards zoom in on scroll
+  const cards = projectsRef.current.querySelectorAll('.project-card')
+  gsap.fromTo(cards,
+    { opacity: 0, scale: 0.9 },
+    {
+      opacity: 1, scale: 1,
+      duration: 1,
+      stagger: 0.15,
+      ease: 'back.out(1.7)',
+      scrollTrigger: {
+        trigger: projectsRef.current,
+        start: 'top 80%',
+      }
+    }
+  )
+  }, [])
 
   const[projects, setProjects] = useState([
     {title: "Project Management Website", link:"https://thepmforge.vercel.app/", image: pm, description: "A responsive web application built with a focus on clean UI design, reusable components, and smooth user interaction. It demonstrates modern frontend development practices and layout structuring.", tools: ["React.js", "Tailwind CSS"]},
@@ -25,22 +57,22 @@ const Project = () => {
             backgroundRepeat: 'repeat',
             opacity: 0.2,}}/>
         <div className="relative z-10 flex flex-col pt-12 px-12 pb-8">
-          <div>
+          <div ref={textRef}>
             <div className="flex items-center gap-1 justify-start ">
               <div className="w-8 md:w-10 h-[2px] bg-[#FE4E02]"></div>
               <p className="text-[#FE4E02] font-mono text-semibold text-xs md:text-sm">PROJECTS</p>
             </div>
             <h2 className="pb-4 text-white text-3xl md:text-4xl font-bold pt-5">Digital Works</h2>
           </div>
-          <div  className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+          <div ref={projectsRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
             {projects.map((project, index) => (
-              <div key={index} className={`bg-[#1a1a1a] flex flex-col md:flex-row  p-6 rounded-2xl shadow-lg border-[1px] border-white/10 hover:border-[#FE4E02]  hover:shadow-xl transition duration-500 `}>
+              <div key={index} className={`group project-card bg-[#1a1a1a] flex flex-col md:flex-row  p-6 rounded-2xl shadow-lg border-[1px] border-white/10 hover:border-[#FE4E02]  hover:shadow-xl transition duration-500 `}>
                 <div className="w-35 h-35 overflow-hidden rounded-md flex-shrink-0 mt-5 mr-6">
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover rounded-md mb-4 grayscale hover:grayscale-0 transition duration-300" />
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover rounded-md mb-4 grayscale group-hover:scale-105 group-hover:grayscale-0 transition duration-300" />
                 </div>
                 <div className="flex flex-col justify-between">
                   <div>
-                    <h3 className="text-white text-xl font-bold mb-2 pt-5"><a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:text-[#FE4E02] transition duration-300">
+                    <h3 className="text-white text-xl font-bold mb-2 pt-5"><a href={project.link} target="_blank" rel="noopener noreferrer" className="group-hover:text-[#FE4E02] transition duration-300">
                       {project.title}
                     </a></h3>
                     <p className="text-gray-300 mb-4 font-mono text-sm">{project.description}</p>

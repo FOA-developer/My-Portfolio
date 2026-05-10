@@ -43,7 +43,7 @@ const Hero = () => {
                     text="Solutions."
                     className="text-secondary md:text-7xl text-4xl font-semibold pt-3"
                     delay={200}
-                    duration={2}
+                    duration={1}
                     ease="power3.out"
                     splitType="chars"
                     from={{ opacity: 0, y: 40 }}
@@ -53,8 +53,8 @@ const Hero = () => {
                     textAlign="left"
                   />
                 </div>
-                <p className="pt-3 text-secondary font-mono w-[90%]">I'm Flourish Agbanoma, a frontend developer building responsive and interactive web applications with React, Next.js and Tailwind CSS. I work with reusable components, API integration, state management, and modern frontend workflows.<br></br><br></br>I turn complex ideas into clean, functional interfaces and improving both performance and user experience. Most of my growth has come from hands-on development, fixing real codebases, collaborating with other developers, and pushing myself through projects and hackathons.</p>
-                <button className="mt-8 md:mt-5 bg-[#FE4E02] text-white  px-6 py-3 flex items-center justify-center gap-2 font-semibold text-sm rounded-3xl transition duration-300">View my Work<ArrowRight/></button>
+                  <p className="pt-3 text-secondary font-mono w-[90%]">I'm Flourish Agbanoma, a frontend developer building responsive and interactive web applications with React, Next.js and Tailwind CSS. I work with reusable components, API integration, state management, and modern frontend workflows.<br></br><br></br>I turn complex ideas into clean, functional interfaces and improving both performance and user experience. Most of my growth has come from hands-on development, fixing real codebases, collaborating with other developers, and pushing myself through projects and hackathons.</p>
+                  <button className="mt-8 md:mt-5 bg-[#FE4E02] text-white  px-6 py-3 flex items-center justify-center gap-2 font-semibold text-sm rounded-3xl transition duration-300">View my Work<ArrowRight/></button>
               </div>
               <div className="rounded-full overflow-hidden w-[300px] h-[300px] md:w-[400px] md:h-[400px] flex-shrink-0 mt-18 ml-6 ">
                 <img src={img} alt="Flourish Agbanoma" className="w-full h-full object-cover object-top"/>

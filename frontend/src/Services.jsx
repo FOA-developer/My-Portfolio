@@ -4,11 +4,17 @@ import {
   PlugZap,
   Code2,
   MonitorSmartphone,
-  Gauge,
-  Blocks
+  Gauge
 } from 'lucide-react';
+import { useRef, useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Services = () => {
+
+  
   const[services, setServices] = useState([
     {
       title: "Frontend Development",
@@ -40,6 +46,38 @@ const Services = () => {
     }
   ])
 
+
+  const textRef = useRef(null)
+  const gridRef = useRef(null)
+
+  useEffect(() => {
+  gsap.fromTo(textRef.current,
+    { opacity: 0, y: 120 },
+    { opacity: 1, y: 0, duration: 2, ease: 'power3.out' }
+  )
+
+  // cards fade up on scroll
+  const cards = gridRef.current.querySelectorAll('.service-card')
+  const delays = [0.1, 0.3, 0.6, 0.7]
+
+
+  cards.forEach((card, i) => {
+    gsap.fromTo(card,
+      { opacity: 0, y: 70 },
+      {
+        opacity: 1, y: 0,
+        duration: 1,
+        delay: delays[i],
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 85%',
+        }
+      }
+    )
+  })
+  }, [])
+
   const handleCardMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
@@ -56,17 +94,17 @@ const Services = () => {
             backgroundRepeat: 'repeat',
             opacity: 0.2,}}/>
         <div className="relative z-10 flex flex-col pt-15 px-10">
-          <div>
+          <div ref={textRef}>
             <div className="flex items-center gap-1 justify-start ">
               <div className="w-8 md:w-10 h-[2px] bg-[#FE4E02]"></div>
               <p className="text-[#FE4E02] font-mono text-semibold text-xs md:text-sm">SERVICES</p>
             </div>
             <h2 className="text-white pb-3 text-3xl md:text-4xl font-bold pt-5">What I Offer</h2>
           </div>
-          <div className="grid grid-cols-1 [grid-template-rows:repeat(2,300px)] grid-rows-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-4 pt-10">
+          <div ref={gridRef}className="grid grid-cols-1 [grid-template-rows:repeat(2,300px)] grid-rows-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-4 pt-10">
             {services.map((service) => {
               const Icon = service.icon;
-              return <div onMouseMove={handleCardMove} className={`bg-[#1a1a1a] group relative p-6 w-full h-full bg-[#0a0a0a] rounded-2xl text-white flex flex-col justify-between gap-4 border-[1px] border-white/10 hover:border-[#FE4E02] ${service.className}`} key={service.id}>
+              return <div onMouseMove={handleCardMove} className={`service-card bg-[#1a1a1a] group relative p-6 w-full h-full bg-[#0a0a0a] rounded-2xl text-white flex flex-col justify-between gap-4 border-[1px] border-white/10 hover:border-[#FE4E02] ${service.className}`} key={service.id}>
                        <div
                           className="absolute inset-0 pointer-events-none rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                           style={{background: 'radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.08), transparent 70%)'}}
