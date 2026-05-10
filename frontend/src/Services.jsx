@@ -48,7 +48,7 @@ const Services = () => {
 
   return ( 
     <section id="services">
-      <div className="relative w-full pb-15" style={{ backgroundColor: '#0a0a0a' }}>
+      <div className="relative w-full pb-[6rem]" style={{ backgroundColor: '#0a0a0a' }}>
         <div
           className="absolute top-0 left-0 w-full h-1/2 pointer-events-none"
           style={{
@@ -58,10 +58,10 @@ const Services = () => {
         <div className="relative z-10 flex flex-col pt-15 px-10">
           <div>
             <div className="flex items-center gap-1 justify-start ">
-              <div className="w-10 h-[2px] bg-[#FE4E02]"></div>
-              <p className="text-[#FE4E02] font-mono text-semibold text-sm">SERVICES</p>
+              <div className="w-8 md:w-10 h-[2px] bg-[#FE4E02]"></div>
+              <p className="text-[#FE4E02] font-mono text-semibold text-xs md:text-sm">SERVICES</p>
             </div>
-            <h2 className="text-white text-3xl md:text-5xl font-bold pt-5">What I Offer</h2>
+            <h2 className="text-white pb-3 text-3xl md:text-4xl font-bold pt-5">What I Offer</h2>
           </div>
           <div className="grid grid-cols-1 [grid-template-rows:repeat(2,300px)] grid-rows-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-4 pt-10">
             {services.map((service) => {

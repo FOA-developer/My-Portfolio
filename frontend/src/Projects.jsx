@@ -30,7 +30,7 @@ const Project = () => {
               <div className="w-8 md:w-10 h-[2px] bg-[#FE4E02]"></div>
               <p className="text-[#FE4E02] font-mono text-semibold text-xs md:text-sm">PROJECTS</p>
             </div>
-            <h2 className="text-white text-3xl md:text-4xl font-bold pt-5">Digital Works</h2>
+            <h2 className="pb-4 text-white text-3xl md:text-4xl font-bold pt-5">Digital Works</h2>
           </div>
           <div  className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
             {projects.map((project, index) => (
