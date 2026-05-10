@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className="inline-block align-top font-bold text-lg text-white pl-2">FOA</div>
       </div>
       <div>
-        <ul className="flex gap-6">
+        <ul className="hidden md:flex gap-6 hidden ">
           {links.map((link, index)=> {
             if (index !== 3){
               return <li className="text-secondary font-semibold pt-1" key={link.id}><a href={link.link}>{link.name}</a></li>
