@@ -58,7 +58,7 @@ const Services = () => {
 
   // cards fade up on scroll
   const cards = gridRef.current.querySelectorAll('.service-card')
-  const delays = [0.1, 0.3, 0.6, 0.7]
+  const delays = [0.1, 0.3, 0.6, 0.8]
 
 
   cards.forEach((card, i) => {
@@ -72,6 +72,7 @@ const Services = () => {
         scrollTrigger: {
           trigger: card,
           start: 'top 85%',
+          toggleActions: 'play none none reverse'
         }
       }
     )
