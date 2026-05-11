@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { X, Menu } from 'lucide-react'
 
 const Navbar = () => {
 
@@ -8,6 +9,8 @@ const Navbar = () => {
     {name: "Projects", link:"#projects", id:3},
     {name: "Contact Me", link:"#contact", id:4}
   ])
+  const[isOpen, setIsOpen] = useState(false)
+
 
   return ( 
     <nav className="flex justify-between items-center p-6 transparent">
@@ -25,10 +28,21 @@ const Navbar = () => {
             }
           })}
         </ul>
-        <div className='flex flex-col gap-1 md:hidden'>
-          <div className="w-4 h-[2px] bg-white"></div>
-          <div className="w-4 h-[2px] bg-white"></div>
-          <div className="w-4 h-[2px] bg-white"></div>
+        <div className="md:hidden">
+        {/* hamburger button */}
+        <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {/* mobile menu */}
+        {isOpen && (
+          <div className="absolute top-14 right-0 w-[70%] bg-[#0a0a0a] border-t rounded-lg border-white/10 flex flex-col items-center gap-6 py-8 z-50">
+            <a href="#about" onClick={() => setIsOpen(false)} className="text-white hover:text-[#FE4E02] transition duration-300">About</a>
+            <a href="#services" onClick={() => setIsOpen(false)} className="text-white hover:text-[#FE4E02] transition duration-300">Services</a>
+            <a href="#projects" onClick={() => setIsOpen(false)} className="text-white hover:text-[#FE4E02] transition duration-300">Projects</a>
+            <a href="#contact" onClick={() => setIsOpen(false)} className="text-white hover:text-[#FE4E02] transition duration-300">Contact</a>
+          </div>
+        )}
         </div>
       </div>
     </nav>
