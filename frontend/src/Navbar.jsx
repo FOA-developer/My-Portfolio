@@ -25,10 +25,10 @@ const Navbar = () => {
             }
           })}
         </ul>
-        <div className='flex flex-col md:hidden'>
-          <div className="w-3 h-[2px] bg-white"></div>
-          <div className="w-3 h-[2px] bg-white"></div>
-          <div className="w-3 h-[2px] bg-white"></div>
+        <div className='flex flex-col gap-1 md:hidden'>
+          <div className="w-4 h-[2px] bg-white"></div>
+          <div className="w-4 h-[2px] bg-white"></div>
+          <div className="w-4 h-[2px] bg-white"></div>
         </div>
       </div>
     </nav>
