@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#0a0a0a] border-t-[1px] border-white/10 px-12 py-13">
       <div className="flex justify-center items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 lg:grid-cols-3">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-9 h-8 pt-1 bg-white rounded text-center font-bold">F</div>
@@ -27,14 +27,14 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold md:hidden lg:block hover:text-[#fe4e02] transition duration 300">Connect</h4>
+            <h4 className="text-white font-semibold hidden lg:block hover:text-[#fe4e02] transition duration 300">Connect</h4>
             <div className="flex lg:flex-col gap-4 mt-3 text-xl">
               <a href="https://github.com/FOA-developer" target="_blank" rel="noopener noreferrer">
                 <div className="flex items-center gap-3">
                   <div>
                     <FaGithub className="text-white hover:text-blue-500" />
                   </div>
-                  <div className="text-sm text-muted md:hidden lg:block">
+                  <div className="text-sm text-muted hidden lg:block">
                     foa-developer
                   </div>
                 </div>
@@ -44,7 +44,7 @@ const Footer = () => {
                   <div>
                   <FaLinkedin className="text-white hover:text-blue-500" />
                   </div>
-                  <div className="text-sm text-muted md:hidden lg:block">
+                  <div className="text-sm text-muted hidden lg:block">
                     Flourish Agbanoma
                   </div>
                 </div>
@@ -54,7 +54,7 @@ const Footer = () => {
                 <div>
                   <BsTwitterX className="text-white hover:text-blue-500" />
                 </div>
-                <div className="text-sm text-muted md:hidden lg:block">
+                <div className="text-sm text-muted hidden lg:block">
                   sheisa_dev
                 </div>
                </div>
@@ -64,7 +64,7 @@ const Footer = () => {
                   <div>
                    <MdEmail className="text-white hover:text-[#FF4D00]" />
                   </div>
-                  <div className="text-sm text-muted md:hidden lg:block">
+                  <div className="text-sm text-muted hidden lg:block">
                     flourishagbanoma@gmail.com
                   </div>
                 </div>
