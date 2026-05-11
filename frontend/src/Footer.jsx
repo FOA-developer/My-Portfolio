@@ -32,7 +32,7 @@ const Footer = () => {
               <a href="https://github.com/FOA-developer" target="_blank" rel="noopener noreferrer">
                 <div className="flex items-center gap-3">
                   <div>
-                    <FaGithub className="text-white hover:text-blue-500" />
+                    <FaGithub className="text-white hover:text-[#fe4e02]"/>
                   </div>
                   <div className="text-sm text-muted hidden lg:block">
                     foa-developer
@@ -42,7 +42,7 @@ const Footer = () => {
               <a href="https://www.linkedin.com/in/flourish-agbanoma-826818314" target="_blank" rel="noopener noreferrer">
                 <div className="flex items-center gap-3">
                   <div>
-                  <FaLinkedin className="text-white hover:text-blue-500" />
+                  <FaLinkedin className="text-white hover:text-[#fe4e02]" />
                   </div>
                   <div className="text-sm text-muted hidden lg:block">
                     Flourish Agbanoma
@@ -52,7 +52,7 @@ const Footer = () => {
               <a href="https://x.com/sheisa_dev" target="_blank" rel="noopener noreferrer">
                <div className="flex items-center gap-3">
                 <div>
-                  <BsTwitterX className="text-white hover:text-blue-500" />
+                  <BsTwitterX className="text-white hover:text-[#fe4e02]" />
                 </div>
                 <div className="text-sm text-muted hidden lg:block">
                   sheisa_dev
