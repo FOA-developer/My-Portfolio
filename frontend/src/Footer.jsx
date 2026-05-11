@@ -11,14 +11,14 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-9 h-8 pt-1 bg-white rounded text-center font-bold">F</div>
-              <div className="font-bold text-white text-base md:text-lg hover:text-[#fe4e02] transition duration 300">FOA</div>
+              <div className="font-bold text-white text-base md:text-lg hover:text-[#fe4e02] transition duration-300">FOA</div>
             </div>
             <div>
               <p class="text-secondary text-sm md:text-base">Building digital solutions that work beautifully, one component at a time.</p>
             </div>
           </div>
           <div>
-            <h4 className="text-white font-semibold hover:text-[#fe4e02] transition duration 300">Navigate</h4>
+            <h4 className="text-white font-semibold hover:text-[#fe4e02] transition duration-300">Navigate</h4>
             <ul className="text-secondary mt-3 text-sm">
               <li className="mb-2"><a href="#about">About</a></li>
               <li className="mb-2"><a href="#services">Services</a></li>
@@ -27,7 +27,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold hidden lg:block hover:text-[#fe4e02] transition duration 300">Connect</h4>
+            <h4 className="text-white font-semibold hidden lg:block hover:text-[#fe4e02] transition duration-300">Connect</h4>
             <div className="flex lg:flex-col gap-4 mt-3 text-xl">
               <a href="https://github.com/FOA-developer" target="_blank" rel="noopener noreferrer">
                 <div className="flex items-center gap-3">
