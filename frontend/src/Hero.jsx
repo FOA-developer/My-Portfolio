@@ -57,7 +57,7 @@ const Hero = () => {
                   <button className="mt-8 md:mt-5 bg-[#FE4E02] text-white  px-6 py-3 flex items-center justify-center gap-2 font-semibold text-sm rounded-3xl transition duration-300 hover:bg-white hover:text-[#FE4E02]">View my Work<ArrowRight/></button>
               </div>
               <div className="rounded-full overflow-hidden w-[300px] h-[300px] md:w-[400px] md:h-[400px] md:ml-20 flex-shrink-0 mt-18  ml-6 ">
-                <img src={img} alt="Flourish Agbanoma" className="w-full h-full object-cover object-top"/>
+                <img src={img} alt="Flourish Agbanoma" className="text-white w-full h-full object-cover object-top"/>
               </div>
             </div>
           </div>
